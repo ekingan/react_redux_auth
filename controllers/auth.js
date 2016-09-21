@@ -8,7 +8,7 @@ function tokenForUser(user) {
 }
 exports.signin = function (req, res, next) {
 	res.send({ token: tokenForUser(req.user)});
-}
+};
 exports.signup = function(req, res, next) {
 	console.log(req.body);
 	const email = req.body.email;
@@ -26,9 +26,7 @@ exports.signup = function(req, res, next) {
 			return res.status(422).send({ error: "email in use"});
 		}
 		//if unique create and save user record
-		const user = new User({ 
-			email: email, 
-			password: password});
+		const user = new User({ email: email, password: password});
 
 
 
@@ -40,4 +38,4 @@ exports.signup = function(req, res, next) {
 			res.json({ token: tokenForUser(user) });
 		});
 	});
-}
+};
