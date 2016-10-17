@@ -42,5 +42,4 @@ userSchema.method.comparePasswords = function (canidatePassword, callback){
 const ModelClass = mongoose.model('user', userSchema);
 
 //export modeal
-
 module.exports = ModelClass;

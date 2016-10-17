@@ -9,7 +9,7 @@ const express = require('express'),
 			cors = require('cors');
 
 //DB connect
-mongoose.connect('mongodb://localhost:auth/auth')
+mongoose.connect('mongodb://localhost:auth/auth');
 
 // App Setup
 app.use(morgan('combined'));
