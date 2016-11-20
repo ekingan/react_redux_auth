@@ -12,16 +12,16 @@ const localLogin = new localStrategy(localOptions, function(email, password, don
 	//if it is the correct user
 	//otherwise call done when false
 	User.findOne({ email: email }, function (err, user){
-		if (err) { return done(err)}
+		if (err) { return done(err)};
 		if (!user) { return done(null, false); }
 	//compare passwords
-	console.log(user)
+	console.log(user);
 		user.comparePasswords(password, function (err, isMatch) {
 			if (err) { return done(err); }
 			if(!isMatch) { return done(null, false); }
 			return done(null, user);
-		})
-	})
+		});
+	});
 });
 
 //set up options fot JWT Strategy
